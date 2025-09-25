@@ -1,0 +1,129 @@
+<!--
+Pacote: Site Vital Vet - versão estática.
+><!doctype html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vital Vet - Clínica Veterinária</title>
+  <meta name="description" content="Clínica veterinária Vital Vet - Consultas, Vacinas, Exames e Cirurgias. Atendimento humanizado para seu pet." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#">
+        <!-- coloque assets/logo.png na pasta assets -->
+        <img src="assets/logo.png" alt="Vital Vet" onerror="this.style.opacity=0.85;" />
+      </a>
+      <nav class="main-nav">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#pre-cadastro">Pré-cadastro</a>
+        <a href="#contato" class="btn-whatsapp">WhatsApp</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>  <main>
+    <section id="home" class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1>Vital Vet</h1>
+          <p>Cuidados veterinários com carinho e tecnologia — consultas, vacinas, exames e cirurgias.</p>
+          <div class="hero-actions">
+            <a href="#pre-cadastro" class="btn primary">Pré-cadastro</a>
+            <a href="#contato" class="btn outline">Agende via WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- coloque assets/hero.jpg -->
+          <img src="assets/hero.jpg" alt="Clínica Vital Vet" />
+        </div>
+      </div>
+    </section><section id="sobre" class="about wrap">
+  <h2>Sobre a Vital Vet</h2>
+  <div class="about-grid">
+    <div>
+      <p>A Vital Vet é uma clínica veterinária dedicada ao bem-estar de cães e gatos. Com equipe especializada e equipamentos modernos, oferecemos atendimento humanizado e completo — da consulta de rotina a procedimentos cirúrgicos e exames laboratoriais.</p>
+    </div>
+    <div>
+      <ul class="highlights">
+        <li>Equipe qualificada — veterinários e técnicos experientes</li>
+        <li>Atendimento por agendamento e urgência</li>
+        <li>Pré-cadastro online para agilizar seu atendimento</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="services wrap">
+  <h2>Nossos Serviços</h2>
+  <div class="cards">
+    <article class="card">
+      <h3>Consultas</h3>
+      <p>Acompanhamento clínico, orientação nutricional e planos de saúde para seu pet.</p>
+    </article>
+    <article class="card">
+      <h3>Vacinas e Preventiva</h3>
+      <p>Calendário vacinal completo e protocolos antiparasitários personalizados.</p>
+    </article>
+    <article class="card">
+      <h3>Exames</h3>
+      <p>Bioquímica, hemograma, imagem (radiografia e ultrassonografia).</p>
+    </article>
+    <article class="card">
+      <h3>Cirurgias</h3>
+      <p>Procedimentos com anestesia monitorada e equipe especializada.</p>
+    </article>
+  </div>
+</section>
+
+<section id="pre-cadastro" class="pre-cadastro wrap">
+  <h2>Pré-cadastro</h2>
+  <p>Preencha os dados abaixo para agilizar o atendimento na clínica.</p>
+  <form id="preForm" class="form-grid" onsubmit="handlePreCadastro(event)">
+    <label>Nome do tutor<input required type="text" name="tutor" placeholder="Seu nome" /></label>
+    <label>Telefone<input required type="tel" name="telefone" placeholder="(99) 99999-9999" /></label>
+    <label>Nome do pet<input required type="text" name="pet" placeholder="Nome do animal" /></label>
+    <label>Espécie<select name="especie"><option>Canino</option><option>Felino</option><option>Outro</option></select></label>
+    <label class="full">Observações<textarea name="obs" placeholder="Informações adicionais"></textarea></label>
+    <div class="form-actions full">
+      <button class="btn primary" type="submit">Enviar Pré-cadastro</button>
+      <button class="btn outline" type="button" onclick="openWhatsApp()">Abrir WhatsApp</button>
+    </div>
+  </form>
+  <p class="note">Obs: o pré-cadastro é enviado por e-mail e também direciona para WhatsApp. Substitua o telefone/URL no arquivo <code>js/script.js</code>.</p>
+</section>
+
+<section id="contato" class="contact wrap">
+  <h2>Contato</h2>
+  <div class="contact-grid">
+    <div>
+      <h3>Endereço</h3>
+      <p>Rua Exemplo, 123 — Bairro — Cidade/UF</p>
+      <h3>Horário</h3>
+      <p>Seg–Sex 8:00–18:00 · Sáb 8:00–12:00</p>
+      <h3>Telefone</h3>
+      <p><a href="tel:+550000000000">(00) 0000-0000</a></p>
+      <p><a class="btn-whatsapp" href="#" onclick="openWhatsApp()">Abrir WhatsApp</a></p>
+    </div>
+    <div>
+      <h3>Localização</h3>
+      <div class="map-placeholder">Mapa (substitua por embed Google Maps se desejar)</div>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Vital Vet — Todos os direitos reservados.</p>
+      <nav class="footer-nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </footer>  <script src="js/script.js"></script></body>
+</html><!--
